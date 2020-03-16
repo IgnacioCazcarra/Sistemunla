@@ -5,12 +5,11 @@ import 'package:sistemunla/subject.dart';
 class YearPage extends StatelessWidget{
 
   final String title;
-  final Subject materia;
+  final List<Subject> subjects;
   final bool invertedGrad;
   final int subjectsNum;
-  var subjects = List();
 
-  YearPage({Key key, this.title,this.materia,this.invertedGrad,this.subjectsNum});
+  YearPage({Key key, this.title,this.subjects,this.invertedGrad,this.subjectsNum});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,7 @@ class YearPage extends StatelessWidget{
                 Container(
                   child: Column(
                     children: <Widget>[
-                      for(var i = 0; i<this.subjectsNum;i+=1) materia
+                      for(var i = 0; i<this.subjectsNum;i+=1) subjects[i]
                     ],
                   ),
                 )
