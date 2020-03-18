@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sistemunla/gradient.dart';
+import 'package:sistemunla/percentBar.dart';
 import 'package:sistemunla/subject.dart';
 
 class YearPage extends StatelessWidget{
@@ -17,40 +18,50 @@ class YearPage extends StatelessWidget{
 
     final title = Container(
       alignment: Alignment.topCenter,
-      margin: EdgeInsets.only(top: 50),
+      margin: EdgeInsets.only(top: 50,left: 10),
       child: Text(
         this.title,
         style: TextStyle(
-          color: Colors.white,
+          color: Color(0xFF06335c),
           fontWeight: FontWeight.bold,
-          fontSize: 40.0,
+          fontSize: 30.0,
           fontFamily: "Raleway",
           decoration: TextDecoration.none,
         ),
       ),
     );
 
-    return Container(
-      child: Stack(
+    return Stack(
         children: <Widget>[
           GradientBack(inverted: this.invertedGrad),
           Container(
+            margin: EdgeInsets.only(top: 45,bottom: 10,left: 4),
+            width: MediaQuery.of(context).size.width-10,
+            height: 70.0*this.subjectsNum,
+            decoration: BoxDecoration(
+              color: Colors.white70,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+          ),
+          Container(
             child: Column(
               children: <Widget>[
-                title,
-                Container(
-                  child: Column(
+                SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      for(var i = 0; i<this.subjectsNum;i+=1) subjects[i]
+                      title,
+                      PercentBar(percent: 0.7),
                     ],
                   ),
-                )
+                ),
+                for(var i = 0; i<this.subjectsNum;i+=1) subjects[i]
               ],
             ),
           )
         ],
-      )
-    );
+      );
   }
 
 }

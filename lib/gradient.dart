@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class GradientBack extends StatelessWidget{
 
-  Color startingColor = Color(0xFF9796f0);
-  Color endingColor = Color(0xFFfbc7d4);
+  Color startingColor = Color(0xFFc21500);
+  Color endingColor = Color(0xFFffc500);
   bool inverted = false;
 
   GradientBack({Key key, this.inverted});
