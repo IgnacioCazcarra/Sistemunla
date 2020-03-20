@@ -2,45 +2,21 @@ import 'package:flutter/material.dart';
 
 class SubjectFab extends StatefulWidget{
 
-  bool finalAprobado = false;
+  Color color = Colors.white;
   bool cursadaAprobada = false;
+  bool finalAprobado = false;
 
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
+
     return _SubjectFab();
   }
-
 }
 
 class _SubjectFab extends State<SubjectFab>{
 
   _SubjectFab();
-
-  void onPressedButton() {
-    if (!widget.cursadaAprobada) {
-      widget.cursadaAprobada = true;
-    }
-    else if (widget.cursadaAprobada && !widget.finalAprobado) {
-      widget.finalAprobado = true;
-    }
-    else {
-      widget.cursadaAprobada = false;
-      widget.finalAprobado = false;
-    }
-  }
-
-  Color chooseColor(){
-    if(!widget.cursadaAprobada && !widget.finalAprobado){
-      return Colors.white;
-    }
-    else if(widget.cursadaAprobada && !widget.finalAprobado){
-      return Colors.orangeAccent;
-    }
-    else if(widget.finalAprobado){
-      return Colors.lightGreen;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +27,7 @@ class _SubjectFab extends State<SubjectFab>{
       width: MediaQuery.of(context).size.width-20,
       margin: EdgeInsets.only(top: 10,bottom: 10,left: 10,right: 1),
       decoration: BoxDecoration(
-        color: chooseColor(),
+        color: widget.color,
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(2.0),
         boxShadow: <BoxShadow>[
@@ -64,7 +40,31 @@ class _SubjectFab extends State<SubjectFab>{
       ),
       child: FloatingActionButton(
         backgroundColor: Color(0xFF06335c),
-        onPressed: onPressedButton,
+        onPressed: (){
+          setState(() {
+
+            if (!widget.cursadaAprobada) {
+              widget.cursadaAprobada = true;
+            }
+            else if (widget.cursadaAprobada && !widget.finalAprobado) {
+              widget.finalAprobado = true;
+            }
+            else {
+              widget.cursadaAprobada = false;
+              widget.finalAprobado = false;
+            }
+
+            if(!widget.cursadaAprobada && !widget.finalAprobado){
+              widget.color = Colors.white;
+            }
+            else if(widget.cursadaAprobada && !widget.finalAprobado){
+              widget.color =  Colors.orangeAccent;
+            }
+            else if(widget.finalAprobado){
+              widget.color = Colors.lightGreen;
+            }
+          });
+        },
         mini: true,
         child: Icon(Icons.check_box),
         heroTag: null,

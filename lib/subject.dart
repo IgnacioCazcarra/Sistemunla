@@ -6,8 +6,9 @@ class Subject extends StatelessWidget{
 
   final int idSubject;
   final String subjectName;
+  final SubjectFab fab;
 
-  Subject({Key key, @required this.subjectName, this.idSubject});
+  Subject({Key key, @required this.subjectName, this.idSubject, @required this.fab});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class Subject extends StatelessWidget{
     );
 
     final idSub = Container(
-        margin: EdgeInsets.only(left: 10.0,right: 1.0),
+        margin: EdgeInsets.only(left: 11.0,right: 1.0),
         child: Text(
         "${this.idSubject}",
         textAlign: TextAlign.justify,
@@ -48,7 +49,7 @@ class Subject extends StatelessWidget{
 
     return Stack(
       children: <Widget>[
-        SubjectFab(),
+        fab,
         Row(
           children: <Widget>[
             idSub,

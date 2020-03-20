@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sistemunla/home_page.dart';
 import 'package:sistemunla/subject.dart';
+import 'package:sistemunla/subjectFAB.dart';
 import 'package:sistemunla/year_page.dart';
 
 class PageSwipe extends StatelessWidget{
@@ -8,62 +9,62 @@ class PageSwipe extends StatelessWidget{
   Widget build(BuildContext context) {
 
     List<Subject> primerAnio = [
-    Subject(subjectName: "Programacion de computadoras",idSubject: 1),
-    Subject(subjectName: "Organizacion de computadoras",idSubject: 2),
-    Subject(subjectName: "Arquitectura de computadoras",idSubject: 3),
-    Subject(subjectName: "Matematica 1",idSubject: 4),
-    Subject(subjectName: "Matematica 2",idSubject: 5),
-    Subject(subjectName: "Expresion de problemas y algoritmos",idSubject: 6),
-    Subject(subjectName: "Introduccion al pensamiento cientifico",idSubject: 7),
+    Subject(subjectName: "Programacion de computadoras",idSubject: 1,fab: SubjectFab()),
+    Subject(subjectName: "Organizacion de computadoras",idSubject: 2,fab: SubjectFab()),
+    Subject(subjectName: "Arquitectura de computadoras",idSubject: 3,fab: SubjectFab()),
+    Subject(subjectName: "Matematica 1",idSubject: 4,fab: SubjectFab()),
+    Subject(subjectName: "Matematica 2",idSubject: 5,fab: SubjectFab()),
+    Subject(subjectName: "Expresion de problemas y algoritmos",idSubject: 6,fab: SubjectFab()),
+    Subject(subjectName: "Introduccion al pensamiento cientifico",idSubject: 7,fab: SubjectFab()),
     ];
 
     List<Subject> segundoAnio = [
-    Subject(subjectName: "Ingenieria de software 1",idSubject: 8),
-    Subject(subjectName: "Introduccion a las bases de datos",idSubject: 9),
-    Subject(subjectName: "Algoritmos y estructura de datos",idSubject: 10),
-    Subject(subjectName: "Orientacion a Objetos 1",idSubject: 11),
-    Subject(subjectName: "Seminario de lenguajes",idSubject: 12),
-    Subject(subjectName: "Introduccion a los sistemas operativos",idSubject: 13),
-    Subject(subjectName: "Matematica 3",idSubject: 14),
-    Subject(subjectName: "Probabilidades y Estadistica",idSubject: 15),
+    Subject(subjectName: "Ingenieria de software 1",idSubject: 8,fab: SubjectFab()),
+    Subject(subjectName: "Introduccion a las bases de datos",idSubject: 9,fab: SubjectFab()),
+    Subject(subjectName: "Algoritmos y estructura de datos",idSubject: 10,fab: SubjectFab()),
+    Subject(subjectName: "Orientacion a Objetos 1",idSubject: 11,fab: SubjectFab()),
+    Subject(subjectName: "Seminario de lenguajes",idSubject: 12,fab: SubjectFab()),
+    Subject(subjectName: "Introduccion a los sistemas operativos",idSubject: 13,fab: SubjectFab()),
+    Subject(subjectName: "Matematica 3",idSubject: 14,fab: SubjectFab()),
+    Subject(subjectName: "Probabilidades y Estadistica",idSubject: 15,fab: SubjectFab()),
     ];
 
     List<Subject> tercerAnio = [
-    Subject(subjectName: "Programacion concurrente",idSubject: 16),
-    Subject(subjectName: "Ingenieria de software 2",idSubject: 17),
-    Subject(subjectName: "Orientacion a objetos 2",idSubject: 18),
-    Subject(subjectName: "Sistemas y organizaciones",idSubject: 19),
-    Subject(subjectName: "Bases de Datos 1",idSubject: 20),
-    Subject(subjectName: "Proyecto de software",idSubject: 21),
-    Subject(subjectName: "Conceptos y Paradigmas de Lenguajes de Programación",idSubject: 22),
-    Subject(subjectName: "Redes y comunicaciones",idSubject: 23),
+    Subject(subjectName: "Programacion concurrente",idSubject: 16,fab: SubjectFab()),
+    Subject(subjectName: "Ingenieria de software 2",idSubject: 17,fab: SubjectFab()),
+    Subject(subjectName: "Orientacion a objetos 2",idSubject: 18,fab: SubjectFab()),
+    Subject(subjectName: "Sistemas y organizaciones",idSubject: 19,fab: SubjectFab()),
+    Subject(subjectName: "Bases de Datos 1",idSubject: 20,fab: SubjectFab()),
+    Subject(subjectName: "Proyecto de software",idSubject: 21,fab: SubjectFab()),
+    Subject(subjectName: "Conceptos y Paradigmas de Lenguajes de Programación",idSubject: 22,fab: SubjectFab()),
+    Subject(subjectName: "Redes y comunicaciones",idSubject: 23,fab: SubjectFab()),
     ];
 
     List<Subject> cuartoAnio = [
-    Subject(subjectName: "Ingenieria de software 3",idSubject: 24),
-    Subject(subjectName: "Bases de datos 2",idSubject: 25),
-    Subject(subjectName: "Fundamentos de Teoria de la Computacion",idSubject: 26),
-    Subject(subjectName: "Sistemas Operativos",idSubject: 27),
-    Subject(subjectName: "Desarrollo de software en Sistemas Distribuidos",idSubject: 28),
-    Subject(subjectName: "Matematica Discreta",idSubject: 29),
-    Subject(subjectName: "Optativa Area Arquitectura, Sistemas operativos y Redes",idSubject: 30),
-    Subject(subjectName: "Optativa Area Algoritmos y lenguajes",idSubject: 31),
+    Subject(subjectName: "Ingenieria de software 3",idSubject: 24,fab: SubjectFab()),
+    Subject(subjectName: "Bases de datos 2",idSubject: 25,fab: SubjectFab()),
+    Subject(subjectName: "Fundamentos de Teoria de la Computacion",idSubject: 26,fab: SubjectFab()),
+    Subject(subjectName: "Sistemas Operativos",idSubject: 27,fab: SubjectFab()),
+    Subject(subjectName: "Desarrollo de software en Sistemas Distribuidos",idSubject: 28,fab: SubjectFab()),
+    Subject(subjectName: "Matematica Discreta",idSubject: 29,fab: SubjectFab()),
+    Subject(subjectName: "Optativa Area Arquitectura, Sistemas operativos y Redes",idSubject: 30,fab: SubjectFab()),
+    Subject(subjectName: "Optativa Area Algoritmos y lenguajes",idSubject: 31,fab: SubjectFab()),
     ];
 
     List<Subject> quintoAnio = [
-    Subject(subjectName: "Politica y gestion de la ciencia",idSubject: 32),
-    Subject(subjectName: "Aspectos legales y Profesionales de la Informatica",idSubject: 33),
-    Subject(subjectName: "Nuevos escenarios",idSubject: 34),
-    Subject(subjectName: "Optativa Area Ingenieria de Software y Bases de datos",idSubject: 35),
-    Subject(subjectName: "Seminario de trabajo final",idSubject: 36),
+    Subject(subjectName: "Politica y gestion de la ciencia",idSubject: 32,fab: SubjectFab()),
+    Subject(subjectName: "Aspectos legales y Profesionales de la Informatica",idSubject: 33,fab: SubjectFab()),
+    Subject(subjectName: "Nuevos escenarios",idSubject: 34,fab: SubjectFab()),
+    Subject(subjectName: "Optativa Area Ingenieria de Software y Bases de datos",idSubject: 35,fab: SubjectFab()),
+    Subject(subjectName: "Seminario de trabajo final",idSubject: 36,fab: SubjectFab()),
     ];
 
     List<Subject> extracurriculares = [
-      Subject(subjectName: "Ingles 1",idSubject: 0),
-      Subject(subjectName: "Ingles 2",idSubject: 0),
-      Subject(subjectName: "Ingles 3",idSubject: 0),
-      Subject(subjectName: "Seminario de Pensamiento Nacional y Latinoamericano",idSubject: 0),
-      Subject(subjectName: "Seminario de Justicia y Derechos Humanos",idSubject: 0),
+      Subject(subjectName: "Ingles 1",idSubject: 0,fab: SubjectFab()),
+      Subject(subjectName: "Ingles 2",idSubject: 0,fab: SubjectFab()),
+      Subject(subjectName: "Ingles 3",idSubject: 0,fab: SubjectFab()),
+      Subject(subjectName: "Seminario de Pensamiento Nacional y Latinoamericano",idSubject: 0,fab: SubjectFab()),
+      Subject(subjectName: "Seminario de Justicia y Derechos Humanos",idSubject: 0,fab: SubjectFab()),
     ];
 
     // TODO: implement build

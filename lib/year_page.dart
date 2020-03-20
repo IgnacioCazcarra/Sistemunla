@@ -12,6 +12,17 @@ class YearPage extends StatelessWidget{
 
   YearPage({Key key, this.title,this.subjects,this.invertedGrad,this.subjectsNum});
 
+
+  int countSubjectsAprobadas(){
+    int count = 0;
+    for(var i = 0; i<this.subjects.length;i+=1){
+      if(this.subjects[i].fab.finalAprobado){
+        count++;
+      }
+    }
+    return count;
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -52,7 +63,7 @@ class YearPage extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       title,
-                      PercentBar(percent: 0.7),
+                      PercentBar(this.subjectsNum,this.countSubjectsAprobadas()),
                     ],
                   ),
                 ),
