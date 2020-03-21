@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:sistemunla/RB_subject.dart';
 import 'package:sistemunla/gradient.dart';
 import 'package:sistemunla/percentBar.dart';
-import 'package:sistemunla/subject.dart';
 
 class YearPage extends StatelessWidget{
 
   final String title;
-  final List<Subject> subjects;
+  final List<RBSubject> subjects;
   final bool invertedGrad;
   final int subjectsNum;
-
+  dynamic count = 0;
   YearPage({Key key, this.title,this.subjects,this.invertedGrad,this.subjectsNum});
 
 
-  int countSubjectsAprobadas(){
-    int count = 0;
-    for(var i = 0; i<this.subjects.length;i+=1){
-      if(this.subjects[i].fab.finalAprobado){
-        count++;
+  int countSubjectsAprobadas(int contador){
+    int contador = 0;
+    for(var i = 0; i<this.subjects.length;i++){
+      if(this.subjects[i].finalAprobado){
+        contador++;
       }
     }
-    return count;
+    return contador;
   }
 
   @override
   Widget build(BuildContext context) {
+    print(this.countSubjectsAprobadas(this.count));
     // TODO: implement build
-
     final title = Container(
       alignment: Alignment.topCenter,
       margin: EdgeInsets.only(top: 50,left: 10),
@@ -63,7 +63,7 @@ class YearPage extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       title,
-                      PercentBar(this.subjectsNum,this.countSubjectsAprobadas()),
+                      //PercentBar(this.subjectsNum, this.countSubjectsAprobadas(this.count))
                     ],
                   ),
                 ),
