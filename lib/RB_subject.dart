@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sistemunla/FAB.dart';
 
 class RBSubject extends StatefulWidget{
 
@@ -7,8 +8,10 @@ class RBSubject extends StatefulWidget{
   Color color = Colors.white;
   bool cursadaAprobada = false;
   bool finalAprobado = false;
+  bool mostrarCorrelativas = false;
+  final String correlativas;
 
-  RBSubject({Key key, @required this.subjectName, @required this.idSubject});
+  RBSubject({Key key, @required this.subjectName, @required this.idSubject, this.correlativas});
 
   @override
   createState() => _RBSubject();
@@ -21,7 +24,8 @@ class _RBSubject extends State<RBSubject>{
   Widget build(BuildContext context) {
 
     final name = Container(
-      margin: EdgeInsets.only(left: 2.0,right: 1.0),
+      margin: EdgeInsets.only(left: 5.0,right: 1.0),
+      alignment: Alignment.centerLeft,
       child: Text(
         widget.subjectName,
         textAlign: TextAlign.justify,
@@ -31,39 +35,55 @@ class _RBSubject extends State<RBSubject>{
             fontSize: 11.0,
             color: Color(0xFF06335c),
             decoration: TextDecoration.none,
-            height: 1.5
+            height: 2.5
         ),
       ),
     );
 
     final idSub = Container(
       margin: EdgeInsets.only(right: 1.0),
+      alignment: Alignment.centerLeft,
       child: Text(
         "${widget.idSubject}",
         textAlign: TextAlign.justify,
         style: TextStyle(
-            fontFamily: "Raleway",
-            fontWeight: FontWeight.w500,
-            fontSize: 11.0,
-            color: Color(0xFF06335c),
-            decoration: TextDecoration.none,
-            height: 1.5
-        ),
-      )
+          fontFamily: "Raleway",
+          fontWeight: FontWeight.w500,
+          fontSize: 11.0,
+          color: Color(0xFF06335c),
+          decoration: TextDecoration.none,
+          height: 2.5
+      ),
+    )
     );
 
     return Container(
-      height: 35,
+      height: widget.mostrarCorrelativas?50:35,
       width: MediaQuery.of(context).size.width-20,
       margin: EdgeInsets.only(top: 10,bottom: 8,left: 1,right: 3),
       child: RaisedButton(
         child: Stack(
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+              Column(
                 children: <Widget>[
-                  idSub,
-                  name,
+                  Row(
+                    children: <Widget>[
+                      idSub,
+                      name,
+                    ],
+                  ),
+                  widget.mostrarCorrelativas?
+                    Container(
+                      margin: EdgeInsets.only(top: 3.0,left: widget.idSubject>=10?19:13),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "ID Correlativas: "+widget.correlativas,
+                        style: TextStyle(
+                          color: Color(0xFF908e8e),
+                          fontSize: 10.0
+                        ),
+                      ),
+                    ):SizedBox()
                 ],
               ),
             ]
@@ -94,7 +114,14 @@ class _RBSubject extends State<RBSubject>{
             }
           });
         },
-
+        onLongPress: (){
+          setState(() {
+            if(widget.mostrarCorrelativas){
+              widget.mostrarCorrelativas = false;
+            }
+            else widget.mostrarCorrelativas = true;
+          });
+        },
       ),
     );
   }

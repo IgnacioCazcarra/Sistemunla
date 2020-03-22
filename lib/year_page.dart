@@ -9,7 +9,7 @@ class YearPage extends StatelessWidget{
   final List<RBSubject> subjects;
   final bool invertedGrad;
   final int subjectsNum;
-  dynamic count = 0;
+  int count = 0;
   YearPage({Key key, this.title,this.subjects,this.invertedGrad,this.subjectsNum});
 
 
@@ -29,7 +29,7 @@ class YearPage extends StatelessWidget{
     // TODO: implement build
     final title = Container(
       alignment: Alignment.topCenter,
-      margin: EdgeInsets.only(top: 50,left: 10),
+      margin: EdgeInsets.only(top: 40,left: 10),
       child: Text(
         this.title,
         style: TextStyle(
@@ -48,7 +48,7 @@ class YearPage extends StatelessWidget{
           Container(
             margin: EdgeInsets.only(top: 45,bottom: 10,left: 4),
             width: MediaQuery.of(context).size.width-10,
-            height: 70.0*this.subjectsNum,
+            height: 640,
             decoration: BoxDecoration(
               color: Colors.white70,
               shape: BoxShape.rectangle,
