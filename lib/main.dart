@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sistemunla/page_swipe.dart';
+import 'package:sistemunla/subject/ui/screens/page_swipe.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

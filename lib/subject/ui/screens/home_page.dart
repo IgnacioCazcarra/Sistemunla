@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sistemunla/gradient.dart';
+import 'package:sistemunla/widgets/gradient.dart';
 
 class HomePage extends StatelessWidget {
 

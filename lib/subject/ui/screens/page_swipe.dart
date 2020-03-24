@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sistemunla/RB_subject.dart';
-import 'package:sistemunla/home_page.dart';
-import 'package:sistemunla/year_page.dart';
+import 'package:sistemunla/subject/ui/widgets/RB_subject.dart';
+import 'package:sistemunla/subject/ui/widgets/year_page.dart';
+
+import 'home_page.dart';
+
 
 class PageSwipe extends StatelessWidget{
   @override

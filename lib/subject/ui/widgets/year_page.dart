@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sistemunla/RB_subject.dart';
-import 'package:sistemunla/gradient.dart';
-import 'package:sistemunla/percentBar.dart';
+import 'package:sistemunla/subject/ui/widgets/RB_subject.dart';
+import 'package:sistemunla/widgets/gradient.dart';
+
 
 class YearPage extends StatelessWidget{
 
