@@ -23,6 +23,15 @@ class YearPage extends StatelessWidget{
     return contador;
   }
 
+  void checkCorrelativas(){
+    int contador = 0;
+    for(var i = 0; i<this.subjects.length;i++){
+      if(this.subjects[i].mostrarCorrelativas){
+        contador++;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     print(this.countSubjectsAprobadas(this.count));
@@ -46,9 +55,9 @@ class YearPage extends StatelessWidget{
         children: <Widget>[
           GradientBack(inverted: this.invertedGrad),
           Container(
-            margin: EdgeInsets.only(top: 45,bottom: 10,left: 4),
+            margin: EdgeInsets.only(top: 45,bottom: 15,left: 6,right: 6),
             width: MediaQuery.of(context).size.width-10,
-            height: 640,
+            height: 644,
             decoration: BoxDecoration(
               color: Colors.white70,
               shape: BoxShape.rectangle,
@@ -63,11 +72,19 @@ class YearPage extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       title,
-                      //PercentBar(this.subjectsNum, this.countSubjectsAprobadas(this.count))
                     ],
                   ),
                 ),
-                for(var i = 0; i<this.subjectsNum;i+=1) subjects[i]
+                Expanded(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width-20,
+                    child: ListView(
+                        scrollDirection: Axis.vertical,
+                        children: subjects
+                    ),
+                  )
+                )
+                //for(var i = 0; i<this.subjectsNum;i+=1) subjects[i]
               ],
             ),
           )

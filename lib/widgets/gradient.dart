@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class GradientBack extends StatelessWidget{
 
-  Color startingColor = Color(0xFFc21500);
-  Color endingColor = Color(0xFFffc500);
+  Color startingColor = Color(0xFF642B73);
+  Color endingColor = Color(0xFFC6426E);
   bool inverted = false;
 
   GradientBack({Key key, this.inverted});
@@ -18,8 +18,8 @@ class GradientBack extends StatelessWidget{
         gradient: LinearGradient(
           colors: [inverted? this.endingColor:this.startingColor,inverted?this.startingColor:this.endingColor],
           tileMode: TileMode.clamp,
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
         )
       ),
     );

@@ -70,12 +70,12 @@ class PageSwipe extends StatelessWidget{
 
     // TODO: implement build
     return PageView(
-      scrollDirection: Axis.vertical,
+      scrollDirection: Axis.horizontal,
       controller: PageController(
       initialPage: 0
       ),
       children: <Widget>[
-        HomePage(title: "Hace swipe para ver las materias de la carrera"),
+        HomePage(),
         YearPage(title: "1er año",invertedGrad: true, subjects: primerAnio,subjectsNum: 7),
         YearPage(title: "2ndo año",invertedGrad: false, subjects: segundoAnio ,subjectsNum: 8),
         YearPage(title: "3er año",invertedGrad: true, subjects: tercerAnio ,subjectsNum: 8),

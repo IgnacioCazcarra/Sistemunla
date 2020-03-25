@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RBSubject extends StatefulWidget{
 
@@ -18,6 +19,20 @@ class RBSubject extends StatefulWidget{
 
 class _RBSubject extends State<RBSubject>{
 
+  _read() async {
+    final prefs = await SharedPreferences.getInstance();
+    final mostrarCorrelativas1 = prefs.getBool('mostrarCorrelativas') ?? 0;
+    print('read: $mostrarCorrelativas1');
+  }
+
+  _save() async {
+    final prefs = await SharedPreferences.getInstance();
+    if(prefs.getBool('mostrarCorrelativas')){
+      prefs.setBool('mostrarCorrelativas', false);
+    }
+    else prefs.setBool('mostrarCorrelativas', true);
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +67,14 @@ class _RBSubject extends State<RBSubject>{
           color: Color(0xFF06335c),
           decoration: TextDecoration.none,
           height: 2.5
-      ),
-    )
+        ),
+      )
     );
 
     return Container(
       height: widget.mostrarCorrelativas?50:35,
       width: MediaQuery.of(context).size.width-20,
-      margin: EdgeInsets.only(top: 10,bottom: 8,left: 1,right: 3),
+      margin: EdgeInsets.only(top: 1,bottom: 22,left: 5,right: 5),
       child: RaisedButton(
         child: Stack(
             children: <Widget>[
@@ -119,6 +134,8 @@ class _RBSubject extends State<RBSubject>{
               widget.mostrarCorrelativas = false;
             }
             else widget.mostrarCorrelativas = true;
+
+
           });
         },
       ),
